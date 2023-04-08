@@ -1,22 +1,23 @@
 const formulario = document.querySelector("form");
-const Inome = document.querySelector(".nome");
-const Iemail = document.querySelector(".email");
-const Isenha = document.querySelector(".senha");
-const Itel = document.querySelector(".tel");
+const botao = document.querySelector("button")
+const inome = document.querySelector(".nome");
+const iemail = document.querySelector(".email");
+const isenha = document.querySelector(".senha");
+const itelefone = document.querySelector(".telefone");
 
 function cadastrar() {
-    fetch("http://localhost:8080/cadastrar",
+    fetch("http://localhost:8080/usuarios",
         {
             Headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Accept': "application/json",
+                'Content-Type': "application/json"
             },
             method: "POST",
             body: JSON.stringify({
-                nome: Inome.value,
-                email: Iemail.value,
-                senha: Isenha.value,
-                telefone: Itel.value
+                nome: inome.value,
+                email: iemail.value,
+                senha: isenha.value,
+                telefone: itelefone.value
             })
         })
 
@@ -26,10 +27,10 @@ function cadastrar() {
 };
 
 function limpar() {
-    Inome.value = "";
-    Iemail.value = "";
-    Isenha.value = "";
-    Itel.value = "";
+    inome.value = "";
+    iemail.value = "";
+    isenha.value = "";
+    itelefone.value = "";
 }
 
 formulario.addEventListener('submit', function (event) {
