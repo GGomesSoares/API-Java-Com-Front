@@ -8,9 +8,9 @@ const itelefone = document.querySelector(".telefone");
 function cadastrar() {
     fetch("http://localhost:8080/usuarios",
         {
-            Headers: {
-                'Accept': "application/json",
-                'Content-Type': "application/json"
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
             },
             method: "POST",
             body: JSON.stringify({
